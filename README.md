@@ -56,6 +56,7 @@ To reduce redundancy, the data model was normalized into four entities:
 - Product
 - Category
 Relationships were established using primary and foreign keys.
+<img width="751" height="647" alt="ER Diagram drawio" src="https://github.com/user-attachments/assets/cb8542de-ffce-411c-8253-2e4dc3526d74" />
 
 
 ## Repository Contents
@@ -71,4 +72,11 @@ docs/
 
 README.md
 
+## Lessons Learned
+This project reinforced the importance of validating data before analysis.
 
+Key lessons include:
+- Never assume source data is internally consistent.
+- Validate business rules before modifying values.
+- Design database structures based on observed relationships rather than assumptions.
+- Separate data cleaning from business analysis.
