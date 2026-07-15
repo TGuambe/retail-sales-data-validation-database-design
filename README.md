@@ -80,3 +80,8 @@ Key lessons include:
 - Validate business rules before modifying values.
 - Design database structures based on observed relationships rather than assumptions.
 - Separate data cleaning from business analysis.
+
+## Future Work
+Potential future improvements include:
+- Investigating the source of pricing inconsistencies.
+- Comparing this dataset with a production-quality retail dataset.
