@@ -24,10 +24,12 @@ The dataset contains e-commerce orders from across India, spanning 2020–2024 -
 ## Data Cleaning
 The following data quality checks were performed:
 - Checked for duplicate Order IDs
-- Investigated missing values
-- Standardized data formatting
-- Reviewed potential primary and foreign keys
-- Examined data suitable for normalization
+- Standardized numeric formatting by removing unnecessary decimal places.
+- Removed records containing invalid transactional values (e.g., negative quantities).
+- Removed records with impossible customer ages (negative values and implausibly young customers).
+- Trimmed leading and trailing whitespace from text fields.
+- Removed duplicate records from the normalized Customer, Product and Category tables.
+- Reviewed missing values to determine whether they should be retained, removed or investigated further.
 
 ## Data Validation
 During validation, several observations were made.
