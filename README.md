@@ -1,25 +1,33 @@
 # retail-sales-data-validation-database-design
 Data validation, cleaning, and relational database design for a retail sales dataset using Microsoft Excel and an ER Diagram.
 
-## Overview
-This project documents the beginning stages of preparing a retail sales dataset for database implementation and business intelligence analysis.
-Instead of than immediately importing the dataset into PostgreSQL for analysis, I first designed a normalized relational database schema using an Entity Relationship Diagram (ERD), evaluated the quality of the data, and performed cleaning in Microsoft Excel.
-The objective was to ensure the dataset was suitable for further SQL analysis and reporting.
+## 💡 Skills Demonstrated
+- Data Cleaning
+- Data Validation
+- Relational Database Design
+- Database Normalization
+- Entity Relationship Diagrams (ERD)
+- Microsoft Excel
+- Documentation
+
+## 📌Overview
+This project documents the initial stages of preparing a retail sales dataset for relational database design.
+Rather than immediately importing the dataset into PostgreSQL, the dataset was first profiled, cleaned, validated, and normalized to identify data quality issues that could affect downstream analysis.
+The project concludes with the design of a normalized Entity Relationship Diagram (ERD) that models the dataset as a relational database.
 
 ## Objective 
 - Design a normalized relational database.
 - Assess the quality of the original retail sales dataset.
 - Identify duplicate and missing values.
-- Prepare the dataset for future PostgreSQL implementation.
 
 ## Dataset
 Source: Retail Sales Dataset (Kaggle)
 The dataset contains e-commerce orders from across India, spanning 2020–2024 - including customer information, product details, pricing, shipping information and sales metrics.
 
-## Tools used
-- Microsoft Excel
-- Draw.io
-- GitHub
+## 🛠 Tools used 
+- Microsoft Excel - Data cleaning & validation
+- Draw.io - Entity Relationship Diagram
+- GitHub - Documentation & version control
 
 ## Data Cleaning
 The following data quality checks were performed:
@@ -32,10 +40,20 @@ The following data quality checks were performed:
 - Reviewed missing values to determine whether they should be retained, removed or investigated further.
 
 ## Data Validation
-During validation, several observations were made.
+During validation, several observations were made:
 
-### Order IDs
-- Order IDs were verified to be unique. No duplicates were found
+## 📊 Validation Summary
+
+| Validation Check | Result |
+|------------------|--------|
+| Duplicate Order IDs | Passed |
+| Duplicate Customers | Removed |
+| Duplicate Products | Removed |
+| Leading/Trailing Spaces | Corrected |
+| Invalid Ages | Removed |
+| Negative Quantities | Removed |
+| Missing Values | Reviewed |
+| Sales Calculations | Inconsistent |
 
 ### Missing Values
 - Missing values were identified in several attributes.
@@ -50,9 +68,7 @@ This suggests the dataset is either synthetic or incorporates undocumented busin
 To preserve data integrity, the original values were retained rather than modified.
 
 ## Database Design
-The original dataset consisted of a single flat table.
-
-To reduce redundancy, the data model was normalized into four entities:
+To reduce redundancy and improve data integrity, the original flat dataset was normalized into four relational entities:
 - Customer
 - Orders
 - Product
@@ -61,29 +77,26 @@ Relationships were established using primary and foreign keys.
 <img width="751" height="647" alt="ER Diagram drawio" src="https://github.com/user-attachments/assets/cb8542de-ffce-411c-8253-2e4dc3526d74" />
 
 
-## Repository Contents
-data/
-- Original dataset
-- Cleaned dataset
+## 📂 Repository Contents
+### 📁 Data
+- [Raw Dataset](data/raw_retail_sales_dataset.csv) – Original retail sales dataset obtained from Kaggle.
+- [Cleaned Dataset](data/cleaned_retail_sales_dataset.xlsx) – Dataset after cleaning, validation, and normalization preparation.
 
-images/
-- Entity Relationship Diagram
+### 📄Documentation
+- [Data Validation Findings](docs/data_validation_findings.md) – Documents the data quality assessment, validation checks, and cleaning decisions made during the project.
 
-docs/
-- Data validation findings
+### 🖼️ Images
+- **Entity Relationship Diagram (ERD)** – Visual representation of the normalized database schema.
 
-README.md
-
-## Lessons Learned
+## 📚 Lessons Learned
 This project reinforced the importance of validating data before analysis.
-
 Key lessons include:
 - Never assume source data is internally consistent.
 - Validate business rules before modifying values.
 - Design database structures based on observed relationships rather than assumptions.
 - Separate data cleaning from business analysis.
 
-## Future Work
+## Potential Improvements
 Potential future improvements include:
 - Investigating the source of pricing inconsistencies.
 - Comparing this dataset with a production-quality retail dataset.
